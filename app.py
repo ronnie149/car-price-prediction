@@ -4,7 +4,11 @@ import pandas as pd
 import numpy as np
 
 # Load model and data
-model = pickle.load(open('LinearRegressionModel.pkl', 'rb'))
+import os
+
+model_path = os.path.join(os.path.dirname(__file__), 'LinearRegressionModel.pkl')
+model = pickle.load(open(model_path, 'rb'))
+
 car = pd.read_csv('Cleaned_Car_data.csv')
 
 st.title("🚗 Car Price Prediction App")
